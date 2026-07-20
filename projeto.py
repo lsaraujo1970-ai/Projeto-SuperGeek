@@ -249,6 +249,23 @@ if coluna_data:
     for linha in range(2, aba.max_row + 1):
         aba.cell(row=linha,
                  column=coluna_data).number_format = "dd/mm/yyyy"
+        
+aba = planilha["Inconsistências"]
+
+# Procura a coluna chamada Data
+coluna_data = None
+
+for celula in aba[1]:
+    if celula.value == "Data":
+        coluna_data = celula.column
+        break
+
+# Formata todas as datas
+if coluna_data:
+    for linha in range(2, aba.max_row + 1):
+        aba.cell(row=linha,
+                 column=coluna_data).number_format = "dd/mm/yyyy"
+
 
 
 # ============================================================
